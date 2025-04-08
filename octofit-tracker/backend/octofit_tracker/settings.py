@@ -25,8 +25,7 @@ SECRET_KEY = "django-insecure-b9#=#-f8$qj1pf46qqkmhq#lq6d)5*g(*+1vc@phj*6!3)9woj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# Allow all hosts
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -38,15 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'rest_framework',
-    'django',
-    'corsheaders',
-    'octofit_tracker',
-    'corsheaders',
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -54,7 +47,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = "octofit_tracker.urls"
@@ -131,19 +123,3 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-# Enable CORS
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_METHODS = [
-    'GET',
-    'POST',
-    'PUT',
-    'PATCH',
-    'DELETE',
-    'OPTIONS',
-]
-CORS_ALLOW_HEADERS = [
-    'content-type',
-    'authorization',
-    'x-csrftoken',
-]
